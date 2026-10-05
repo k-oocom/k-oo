@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!--
+  ==========================================================
+  記事テンプレート（このファイルは公開しない：noindex 済み）
+  新しい記事は、このファイルをコピーして
+    /posts/YYYY/MM/英語スラッグ.html
+  として作成し、{{ }} と TODO の箇所をすべて置き換える。
+  公開URLは拡張子なし： https://k-oo.com/posts/YYYY/MM/スラッグ
+  記事を追加したら必ず更新するもの：
+    1) index.html の記事一覧（先頭に追加）
+    2) sitemap.xml（url を追加）
+    3) 関連記事（同カテゴリの記事同士でリンク）
+  ==========================================================
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{記事タイトル（全角30字前後）}}｜k-oo</title>
+<meta name="description" content="{{記事の要約。全角80〜120字。狙うキーワードを前半に入れる}}">
+<link rel="canonical" href="https://k-oo.com/posts/YYYY/MM/SLUG">
+<!-- テンプレートのみ noindex。実際の記事では次の行を下の robots に置き換える：
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+-->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#e4572e">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="k-oo（ケーウー）">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="{{記事タイトル}}">
+<meta property="og:description" content="{{記事の要約}}">
+<meta property="og:url" content="https://k-oo.com/posts/YYYY/MM/SLUG">
+<meta property="og:image" content="https://k-oo.com/assets/img/posts/SLUG.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="YYYY-MM-DDT09:00:00+09:00">
+<meta property="article:modified_time" content="YYYY-MM-DDT09:00:00+09:00">
+<meta property="article:section" content="{{カテゴリ}}">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/js/main.js" defer></script>
+<!-- AdSense 承認後：審査用コードをここに貼る
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://k-oo.com/posts/YYYY/MM/SLUG#article",
+      "headline": "{{記事タイトル}}",
+      "description": "{{記事の要約}}",
+      "image": ["https://k-oo.com/assets/img/posts/SLUG.jpg"],
+      "datePublished": "YYYY-MM-DDT09:00:00+09:00",
+      "dateModified": "YYYY-MM-DDT09:00:00+09:00",
+      "inLanguage": "ja",
+      "mainEntityOfPage": "https://k-oo.com/posts/YYYY/MM/SLUG",
+      "author": { "@type": "Organization", "name": "k-oo", "url": "https://k-oo.com/about" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "k-oo",
+        "logo": { "@type": "ImageObject", "url": "https://k-oo.com/assets/img/icon-512.png" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://k-oo.com/" },
+        { "@type": "ListItem", "position": 2, "name": "{{記事タイトル}}", "item": "https://k-oo.com/posts/YYYY/MM/SLUG" }
+      ]
+    }
+    /* FAQ を入れる記事のみ、次の要素を @graph に追加（本文の FAQ と同じ内容にすること）
+    ,{
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "質問", "acceptedAnswer": { "@type": "Answer", "text": "回答" } }
+      ]
+    }
+    */
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="k-oo ホーム">
+      <img class="brand-mark" src="/assets/img/favicon.svg" width="34" height="34" alt="">
+      <span class="brand-text"><span class="brand-name">k-oo</span><span class="brand-kana">ケーウー</span></span>
+    </a>
+    <nav class="site-nav" aria-label="メインメニュー">
+      <a href="/">ホーム</a>
+      <a href="/about">運営者情報</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap wrap--article">
+
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="/">ホーム</a></li>
+        <li aria-current="page">{{記事タイトル（短縮可）}}</li>
+      </ol>
+    </nav>
+
+    <article>
+      <header class="article-head">
+        <span class="tag">{{カテゴリ}}</span>
+        <h1 class="article-title">{{記事タイトル}}</h1>
+        <p class="article-meta">
+          <span>公開日：<time datetime="YYYY-MM-DD">YYYY年M月D日</time></span>
+          <span>更新日：<time datetime="YYYY-MM-DD">YYYY年M月D日</time></span>
+        </p>
+        <figure class="article-eyecatch">
+          <img src="/assets/img/posts/SLUG.webp" width="1200" height="675" alt="{{画像の内容を説明}}" fetchpriority="high" decoding="async">
+        </figure>
+        <!-- アフィリエイトリンクを含む記事のみ残す（ステマ規制対応：記事の冒頭に明示） -->
+        <p class="pr-notice"><b>PR</b><span>この記事には広告（アフィリエイトリンク）が含まれています。<small>Amazonのアソシエイトとして、k-ooは適格販売により収入を得ています。</small></span></p>
+      </header>
+
+      <p class="lead">{{導入文：読者の悩みに共感 → この記事で分かること、を2〜3文で}}</p>
+
+      <nav class="toc" aria-labelledby="toc-title">
+        <p class="toc-title" id="toc-title">目次</p>
+        <ol>
+          <li><a href="#sec1">{{見出し1}}</a></li>
+          <li><a href="#sec2">{{見出し2}}</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+          <li><a href="#summary">まとめ</a></li>
+        </ol>
+      </nav>
+
+      <div class="ad-slot ad-slot--top" aria-label="広告">
+        <span class="ad-label">広告</span>
+        <!-- AdSense のディスプレイ広告ユニットをここに（承認後）
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="0000000000" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        -->
+      </div>
+
+      <div class="article-body">
+
+        <h2 id="sec1">{{見出し1}}</h2>
+        <p>{{本文}}</p>
+
+        <h3>{{小見出し}}</h3>
+        <p>{{本文}}</p>
+
+        <div class="callout">
+          <p class="callout-title">ポイント</p>
+          <p>{{重要な点を短くまとめる}}</p>
+        </div>
+
+        <h2 id="sec2">{{見出し2}}</h2>
+        <p>{{本文}}</p>
+
+        <!-- ===== 商品紹介ブロック（Amazon）=====
+             ・価格は書かない（変動するため）。「価格・在庫は商品ページで確認」と案内する
+             ・画像は Amazon アソシエイトの SiteStripe で取得したリンク／画像、または自分で撮影した写真のみ使用
+             ・リンクは必ず自分のトラッキングID付きのURL。メール／SNSのDM／オフライン配布には使わない
+             ・レビューや評価を捏造しない。実際に調べた内容・仕様に基づいて書く -->
+        <div class="product">
+          <div class="product-img">
+            <img src="/assets/img/posts/SLUG-product1.webp" width="400" height="400" alt="{{商品名}}" loading="lazy" decoding="async">
+          </div>
+          <div class="product-body">
+            <span class="product-rank">おすすめ 1</span>
+            <p class="product-name">{{メーカー名 商品名 型番}}</p>
+            <ul class="product-points">
+              <li>{{特徴・仕様1（公式情報ベース）}}</li>
+              <li>{{特徴・仕様2}}</li>
+              <li>{{こんな人に向いている}}</li>
+            </ul>
+            <a class="btn-amazon" href="https://www.amazon.co.jp/dp/XXXXXXXXXX?tag=koo0a9-22" target="_blank" rel="sponsored nofollow noopener">
+              Amazonで見る<small>※ 価格・在庫は商品ページでご確認ください</small>
+            </a>
+          </div>
+        </div>
+
+        <div class="proscons">
+          <div><h4>良い点</h4><ul><li>{{良い点}}</li><li>{{良い点}}</li></ul></div>
+          <div><h4>気になる点</h4><ul><li>{{気になる点}}</li><li>{{気になる点}}</li></ul></div>
+        </div>
+
+        <div class="ad-slot" aria-label="広告">
+          <span class="ad-label">広告</span>
+        </div>
+
+        <h2 id="faq">よくある質問</h2>
+        <div class="faq">
+          <details>
+            <summary>{{質問1}}</summary>
+            <p class="faq-a">{{回答1}}</p>
+          </details>
+          <details>
+            <summary>{{質問2}}</summary>
+            <p class="faq-a">{{回答2}}</p>
+          </details>
+        </div>
+
+        <h2 id="summary">まとめ</h2>
+        <p>{{要点を3行程度で振り返り、次の行動を示す}}</p>
+
+        <h3>参考にした情報</h3>
+        <ul>
+          <li><a href="https://example.com/" target="_blank" rel="noopener noreferrer">{{公式サイト・公的機関など}}</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <section class="related" aria-labelledby="related-title">
+      <div class="section-head"><h2 id="related-title">関連記事</h2></div>
+      <ul class="post-grid">
+        <!-- 関連記事カードを2件（index.html の post-card と同じ構造） -->
+      </ul>
+    </section>
+
+    <a class="back-home" href="/">記事一覧へ戻る</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="/" aria-label="k-oo ホーム">
+        <img class="brand-mark" src="/assets/img/favicon.svg" width="34" height="34" alt="" loading="lazy">
+        <span class="brand-text"><span class="brand-name">k-oo</span><span class="brand-kana">ケーウー</span></span>
+      </a>
+      <ul class="footer-links">
+        <li><a href="/">ホーム</a></li>
+        <li><a href="/about">運営者情報</a></li>
+        <li><a href="/privacy">プライバシーポリシー</a></li>
+      </ul>
+    </div>
+    <p class="footer-note">Amazonのアソシエイトとして、k-ooは適格販売により収入を得ています。当サイトは、広告やアフィリエイトプログラムを利用して商品・サービスを紹介することがあります。詳しくは<a href="/privacy">プライバシーポリシー</a>をご確認ください。</p>
+    <p class="copyright">&copy; 2026 k-oo.com</p>
+  </div>
+</footer>
+
+<button class="to-top" type="button" aria-label="ページの先頭へ戻る">↑</button>
+</body>
+</html>
