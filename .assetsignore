@@ -1,0 +1,12 @@
+# サイトとして公開しないファイル（Cloudflare にアップロードされません）
+.git
+.github
+.gitignore
+.assetsignore
+.DS_Store
+Thumbs.db
+README.md
+wrangler.jsonc
+worker
+templates
+node_modules
