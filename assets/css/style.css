@@ -216,6 +216,24 @@ a:hover { color: var(--accent); }
 .related { margin-top: 72px; }
 .related .post-grid { grid-template-columns: repeat(2, 1fr); }
 
+/* ---------- 人気記事（main.js が /api/popular から自動で表示。件数が少ない間は hidden のまま） ---------- */
+.popular { margin-top: 64px; }
+.popular[hidden] { display: none; }
+.popular-list { list-style: none; margin: 0; padding: 0; counter-reset: rank; display: grid; gap: 4px; }
+.popular-item { counter-increment: rank; }
+.popular-item a { display: grid; grid-template-columns: auto 96px 1fr; align-items: center; gap: 14px; padding: 10px 8px; border-radius: var(--radius); color: var(--ink); text-decoration: none; transition: background-color .2s ease; }
+.popular-item a::before { content: counter(rank); width: 1.6em; font-size: 20px; font-weight: 800; color: var(--accent); text-align: center; font-variant-numeric: tabular-nums; }
+.popular-item a:hover { background: var(--accent-soft); }
+.popular-thumb { display: block; aspect-ratio: 3 / 2; border-radius: 4px; overflow: hidden; background: var(--accent-soft); border: 1px solid var(--line); }
+.popular-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.popular-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.popular-title { font-size: 15px; font-weight: 700; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.popular-meta { font-size: 12px; color: var(--muted); }
+@media (max-width: 560px) {
+  .popular-item a { grid-template-columns: auto 76px 1fr; gap: 10px; }
+  .popular-title { font-size: 14px; }
+}
+
 .back-home { display: inline-flex; margin-top: 40px; font-weight: 700; text-decoration: none; }
 .back-home::before { content: "←"; margin-right: 8px; }
 
@@ -281,6 +299,6 @@ html.ads-on .ad-slot--top { min-height: 250px; }
 }
 
 @media print {
-  .site-header, .site-footer, .ad-slot, .to-top, .toc { display: none !important; }
+  .site-header, .site-footer, .ad-slot, .to-top, .toc, .popular { display: none !important; }
   body { background: #fff; color: #000; }
 }
