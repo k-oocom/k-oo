@@ -1,0 +1,25 @@
+// k-oo.com の Cloudflare Workers 設定
+// GitHub の main に push すると Workers Builds が自動でデプロイします。
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "k-oo",
+  "compatibility_date": "2026-10-01",
+  "main": "worker/index.js",
+  "assets": {
+    // リポジトリのルートをそのまま公開。公開しないファイルは .assetsignore に記載
+    "directory": ".",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    // /api/* だけ Worker（閲覧数・人気記事）を通す
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "k-oo-views",
+      "database_id": "109f5e32-67e2-46d2-99cb-39961136831e"
+    }
+  ],
+  "observability": { "enabled": true }
+}
