@@ -4,10 +4,13 @@
   X-Frame-Options: SAMEORIGIN
 
 /assets/css/*
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
 /assets/js/*
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 
 /assets/img/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=2592000
+
+/assets/data/*
+  Cache-Control: public, max-age=300
