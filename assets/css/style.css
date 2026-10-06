@@ -86,7 +86,8 @@ a:hover { color: var(--accent); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 66px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
 .brand:hover { color: var(--ink); }
-.brand-mark { width: 32px; height: 32px; }
+.brand-logo { height: 52px; width: auto; }
+.footer-top .brand-logo { height: 60px; }
 .brand-text { display: flex; align-items: baseline; gap: 10px; line-height: 1.2; }
 .brand-name { font-family: var(--font-head); font-weight: 500; font-size: 23px; letter-spacing: .14em; }
 .brand-kana { font-size: 10.5px; color: var(--muted); letter-spacing: .24em; }
@@ -310,7 +311,7 @@ html.ads-on .ad-slot--top { min-height: 250px; }
 @media (max-width: 600px) {
   .wrap { padding: 0 20px; }
   .site-header .wrap { height: 58px; }
-  .brand-mark { width: 28px; height: 28px; }
+  .brand-logo { height: 44px; }
   .brand-name { font-size: 21px; }
   .brand-kana { display: none; }
   .site-nav { gap: 18px; }
