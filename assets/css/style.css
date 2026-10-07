@@ -218,7 +218,14 @@ a:hover { color: var(--accent); }
 .product-points li::marker { color: var(--accent); }
 .product .btn-amazon { margin: 16px 0 0; max-width: none; }
 .product--noimg { grid-template-columns: 1fr; }
-.product--noimg .btn-amazon { max-width: 420px; }
+.product--noimg .product-body { display: grid; grid-template-columns: minmax(0, 1fr) 280px; column-gap: 32px; align-items: center; }
+.product--noimg .product-name, .product--noimg .product-points { grid-column: 1; }
+.product--noimg .btn-amazon { grid-column: 2; grid-row: 1 / span 2; margin: 0; max-width: none; padding: 16px 22px; line-height: 1.6; border-radius: 22px; }
+.product--noimg .btn-amazon small { margin-top: 6px; font-size: 10.5px; letter-spacing: 0; }
+@media (max-width: 720px) {
+  .product--noimg .product-body { display: block; }
+  .product--noimg .btn-amazon { margin: 16px 0 0; }
+}
 
 .proscons { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0 0 1.7em; }
 .proscons > div { padding: 18px 22px; background: var(--soft); border-radius: var(--radius-lg); }
