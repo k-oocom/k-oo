@@ -6,6 +6,7 @@
 .DS_Store
 Thumbs.db
 README.md
+CLAUDE.md
 wrangler.jsonc
 worker
 templates
