@@ -217,6 +217,8 @@ a:hover { color: var(--accent); }
 .product-points li { margin: .1em 0; }
 .product-points li::marker { color: var(--accent); }
 .product .btn-amazon { margin: 16px 0 0; max-width: none; }
+.product--noimg { grid-template-columns: 1fr; }
+.product--noimg .btn-amazon { max-width: 420px; }
 
 .proscons { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0 0 1.7em; }
 .proscons > div { padding: 18px 22px; background: var(--soft); border-radius: var(--radius-lg); }
