@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://k-oo.com/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-09</lastmod>
   </url>
   <url>
     <loc>https://k-oo.com/about</loc>
@@ -19,5 +19,9 @@
   <url>
     <loc>https://k-oo.com/posts/2026/10/autumn-dryness-care</loc>
     <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://k-oo.com/posts/2026/10/what-is-retinal</loc>
+    <lastmod>2026-10-09</lastmod>
   </url>
 </urlset>
