@@ -11,6 +11,21 @@
   var doc = document;
   var root = doc.documentElement;
 
+  // --- Webフォント（Google Fonts）：表示速度のため、ページ表示が終わってから読み込みます ---
+  // <head> に <link> を置くと、モバイルの表示開始が遅れて PageSpeed の性能が下がるため、ここで後から追加します。
+  var loadFonts = function () {
+    var f = doc.createElement('link');
+    f.rel = 'stylesheet';
+    f.href = 'https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap';
+    doc.head.appendChild(f);
+  };
+  var afterLoadFonts = function () {
+    if ('requestIdleCallback' in window) window.requestIdleCallback(loadFonts, { timeout: 2500 });
+    else window.setTimeout(loadFonts, 1200);
+  };
+  if (doc.readyState === 'complete') afterLoadFonts();
+  else window.addEventListener('load', afterLoadFonts, { once: true });
+
   // --- Google Analytics 4 ---
   // 計測はすぐに始め（dataLayer に記録）、gtag.js 本体はページ表示が終わってから読み込みます。
   // → 表示速度（PageSpeed のブロック時間）を下げずに計測できます。

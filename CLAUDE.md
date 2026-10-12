@@ -68,7 +68,8 @@
 
 - **색**: `--bg #fffdfc`, `--soft #faf1f1`, `--blush #f8eded`, `--accent #c27d89`, `--accent-ink #a8606d`, `--ink #3b3335`
 - **폰트**: 제목은 Shippori Mincho B1, 본문은 Zen Kaku Gothic New (Google Fonts)
-  - 폰트 CSS는 렌더링을 막지 않게 `media="print" onload="this.media='all'"`와 `<noscript>`로 불러온다. **이 방식을 유지한다.** 모바일 성능 57점이 97점이 된 이유다.
+  - 폰트 CSS는 HTML `<head>`에 `<link>`로 넣지 **않는다.** `assets/js/main.js`가 페이지 표시 후(load → idle)에 추가한다. (2026-10-12 PageSpeed 측정: `<head>`에 두면 모바일 57~59점, 뒤로 미루면 97점, FCP 7초 → 1.5초.) 새 페이지에도 폰트 `<link>`나 `preconnect`를 넣지 않는다.
+  - `main.js`를 바꾸면 script 태그의 `?v=날짜`를 올린다 (현재 `20261012`).
 - **로고와 아이콘**
   - 로고: `/assets/img/logo.svg` (운영자가 직접 만든 "koo" 필기체)
   - 파비콘: `/assets/img/favicon.svg`
